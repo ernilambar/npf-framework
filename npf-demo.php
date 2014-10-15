@@ -84,7 +84,7 @@ $my_settings = array(
 					),
 				'sample_radio' => array(
 					'id'    => 'sample_radio',
-					'title' => 'Gender',
+					'title' => 'Sample Radio',
 					'type'  => 'radio',
 					'choices'  => array(
 						'm' => 'Male',
@@ -114,15 +114,15 @@ $my_settings = array(
 					'taxonomy' => 'category',
 					),
 				'sample_post_type_select' => array(
-					'id'       => 'sample_post_type_select',
-					'title'    => 'Sample Post Type Select',
-					'type'     => 'custom_post_type_select',
+					'id'        => 'sample_post_type_select',
+					'title'     => 'Sample Post Type Select',
+					'type'      => 'custom_post_type_select',
 					'post_type' => 'page',
 					),
 				'sample_post_type_checkbox' => array(
-					'id'       => 'sample_post_type_checkbox',
-					'title'    => 'Sample Post Type Checkbox',
-					'type'     => 'custom_post_type_checkbox',
+					'id'        => 'sample_post_type_checkbox',
+					'title'     => 'Sample Post Type Checkbox',
+					'type'      => 'custom_post_type_checkbox',
 					'post_type' => 'page',
 					),
 				'sample_wysiwyg' => array(
