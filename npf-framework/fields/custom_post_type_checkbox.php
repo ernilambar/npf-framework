@@ -29,7 +29,7 @@ class npf_field_custom_post_type_checkbox extends npf_field
 		if (!empty($all_posts)) {
 			foreach ($all_posts as $key => $choice) {
 				echo '<input type="checkbox" name="'.$args['field_name'].'[]" id="'.$args['field_id'].'"  value="'.esc_attr($choice->ID).'"';
-				checked(in_array($choice->ID, $args['field_value']), true, true );
+				checked( is_array($args['field_value']) && in_array($choice->ID, $args['field_value']), true, true );
 				echo ' />';
 				echo esc_attr($choice->post_title).'<br/>';
 			}

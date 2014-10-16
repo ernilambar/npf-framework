@@ -36,16 +36,18 @@ $my_settings = array(
 			'sub_heading' => 'General sub heading here',
 			'fields' => array(
 				'sample_text' => array(
-					'id'      => 'sample_text',
-					'title'   => 'Sample Text',
-					'type'    => 'text',
-					'default' => '',
+					'id'          => 'sample_text',
+					'title'       => 'Sample Text',
+					'type'        => 'text',
+					'default'     => '',
+					'description' => 'Please Enter Sample Text ',
 					),
 				'sample_textarea' => array(
-					'id'      => 'sample_textarea',
-					'title'   => 'Sample Textarea',
-					'type'    => 'textarea',
-					'default' => '',
+					'id'          => 'sample_textarea',
+					'title'       => 'Sample Textarea',
+					'type'        => 'textarea',
+					'default'     => '',
+					'description' => 'Please Enter Content ',
 					),
 				'sample_date' => array(
 					'id'    => 'sample_date',
@@ -100,6 +102,16 @@ $my_settings = array(
 						'tv'     => 'TV',
 						'sports' => 'Sports',
 						),
+					),
+				'sample_user_role_select' => array(
+					'id'      => 'sample_user_role_select',
+					'title'   => 'Sample Role Select',
+					'type'    => 'user_role_select',
+					),
+				'sample_user_role_checkbox' => array(
+					'id'      => 'sample_user_role_checkbox',
+					'title'   => 'Sample Role Checkbox',
+					'type'    => 'user_role_checkbox',
 					),
 				'sample_taxonomy_select' => array(
 					'id'       => 'sample_taxonomy_select',

@@ -36,12 +36,12 @@ class npf_field_custom_taxonomy_checkbox extends npf_field
 				if (is_array($args['field_value']) && in_array($choice->term_id, $args['field_value'])) {
 					$checked_text = ' checked="checked" ';
 				}
-				echo '<input type="checkbox" name="'.$args['field_name'].'[]" id="'.$args['field_id'].'" '.$checked_text.' value="'.esc_attr($choice->term_id).'" />';
+				echo '<input type="checkbox" name="'.$args['field_name'].'[]" id="'.$args['field_id'].'" value="'.esc_attr($choice->term_id).'"';
+				checked( is_array($args['field_value']) && in_array($choice->term_id, $args['field_value']), true, true );
+				echo ' />';
 				echo esc_attr($choice->name).'<br/>';
 			}
 		}
-
-		// wp_dropdown_categories( $pargs );
 
 	}
 
