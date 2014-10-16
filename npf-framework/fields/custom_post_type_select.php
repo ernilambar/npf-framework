@@ -29,11 +29,9 @@ class npf_field_custom_post_type_select extends npf_field
 		if (!empty($all_posts)) {
 			echo '<select name="'.$args['field_name'].'" id="'.$args['field_id'].'">';
 			foreach ($all_posts as $k => $p) {
-				$selected_text = '';
-				if ( $p->ID == $args['field_value'] ) {
-					$selected_text = ' selected="selected" ';
-				}
-				echo '<option value="'.esc_attr($p->ID).'" '.$selected_text.'>'.esc_attr($p->post_title).'</option>';
+				echo '<option value="'.esc_attr($p->ID).'" ';
+				selected($p->ID, $args['field_value'], true );
+				echo '>'.esc_attr($p->post_title).'</option>';
 			}
 			echo '</select>';
 		}
