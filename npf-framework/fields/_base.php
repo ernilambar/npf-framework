@@ -34,4 +34,16 @@ class npf_field
 
 	}
 
+	function show_description($args){
+		if (isset($args['field']['description'])&& !empty($args['field']['description'])) {
+			echo sprintf('%s%s%s',
+				'<p class="description">',
+				esc_attr($args['field']['description']),
+				'</p>'
+				);
+		}
+
+	}
+
+
 }

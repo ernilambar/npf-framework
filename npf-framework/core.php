@@ -105,6 +105,7 @@ class NPF_Options
 		$class = 'npf_field_'.$field_type;
 		$instance = $class::getInstance();
 		$instance->render_field($args);
+		$instance->show_description($args);
 
 	}
 	///
