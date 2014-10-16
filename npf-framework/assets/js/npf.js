@@ -13,4 +13,6 @@ jQuery(document).ready(function($){
 
   $("select").select2();
 
+  $('input.npf-on-off').onoff();
+
 });
