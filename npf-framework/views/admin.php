@@ -20,7 +20,7 @@
 
   <div id="poststuff">
 
-    <div id="post-body" class="metabox-holder columns-2">
+    <div id="post-body" class="metabox-holder columns-1">
 
 
 
@@ -62,22 +62,6 @@
         </div> <!-- .meta-box-sortables .ui-sortable -->
 
       </div> <!-- post-body-content -->
-
-      <div id="postbox-container-1" class="postbox-container">
-        <div class="meta-box-sortables">
-
-            <div class="postbox">
-
-                <h3><span>Help &amp; Support</span></h3>
-                <div class="inside">
-                    <h4>Questions, bugs, or great ideas?</h4>
-                    <p><a href="#" target="_blank">Visit our plugin support page</a></p>
-                </div> <!-- .inside -->
-
-            </div> <!-- .postbox -->
-
-        </div> <!-- .meta-box-sortables -->
-      </div>
 
     </div> <!-- #post-body .metabox-holder .columns-2 -->
 
