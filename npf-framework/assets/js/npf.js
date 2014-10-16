@@ -11,4 +11,6 @@ jQuery(document).ready(function($){
 	$('input.select-time').timepicker();
 	$('input.select-datetime').datetimepicker();
 
+  $("select").select2();
+
 });
