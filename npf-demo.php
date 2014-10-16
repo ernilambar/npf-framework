@@ -103,6 +103,11 @@ $my_settings = array(
 						'sports' => 'Sports',
 						),
 					),
+				'sample_sidebar_select' => array(
+					'id'          => 'sample_sidebar_select',
+					'title'       => 'Sample Sidebar Select',
+					'type'        => 'sidebar_select',
+					),
 				'sample_user_role_select' => array(
 					'id'      => 'sample_user_role_select',
 					'title'   => 'Sample Role Select',
