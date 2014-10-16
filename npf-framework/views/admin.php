@@ -15,59 +15,22 @@
 
     </h2>
 
+    <form action="options.php" method="post">
+    <?php
 
+    settings_fields($this->base_args['option_slug'].'-group');
 
+    foreach ($this->base_args['tabs'] as $tab_key => $tab) {
 
-  <div id="poststuff">
+      echo '<div id="npf-'.$tab['id'].'" class="single-tab-content">';
+      do_settings_sections($tab['id'].'-main');
+      echo '</div>';
 
-    <div id="post-body" class="metabox-holder columns-1">
+    }
+    submit_button(__('Save Changes'));
 
-
-
-      <!-- main content -->
-      <div id="post-body-content">
-
-        <div class="meta-box-sortables ui-sortable">
-
-          <div class="postbox1">
-
-
-            <div class="inside1">
-
-
-            	<form action="options.php" method="post">
-							<?php
-
-							settings_fields($this->base_args['option_slug'].'-group');
-
-							foreach ($this->base_args['tabs'] as $tab_key => $tab) {
-
-
-                echo '<div id="npf-'.$tab['id'].'" class="single-tab-content">';
-                do_settings_sections($tab['id'].'-main');
-                echo '</div>';
-
-							}
-							submit_button(__('Save Changes'));
-
-							 ?>
-						 </form>
-
-
-
-            </div> <!-- .inside -->
-
-          </div> <!-- .postbox -->
-
-        </div> <!-- .meta-box-sortables .ui-sortable -->
-
-      </div> <!-- post-body-content -->
-
-    </div> <!-- #post-body .metabox-holder .columns-2 -->
-
-    <br class="clear">
-  </div> <!-- #poststuff -->
-
+     ?>
+   </form>
 
   </div> <!-- #npf-tab-container -->
 
