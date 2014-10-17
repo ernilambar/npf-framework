@@ -35,17 +35,28 @@ jQuery(document).ready(function($){
     tb_show('', 'media-upload.php?type=image&amp;TB_iframe=true');
     return false;
   });
+  $('input.img').each(function(i,item){
+    var $this = $(this);
+    if( $this.val() == '' ){
+      $this.parent().find('.image-preview-wrap').hide();
+    }
+  });
+
   window.send_to_editor = function(html) {
     imgurl = $('img', html).attr('src');
     image_field.val(imgurl);
+    image_field.parent().find('.image-preview-wrap').hide();
+    image_field.parent().find('.img-preview').attr('src',imgurl);
+    image_field.parent().find('.image-preview-wrap').fadeIn();
     tb_remove();
   }
   $(document).on('click', 'input.btn-remove-upload', function(evt){
     evt.preventDefault();
     var $this = $(this);
     $this.siblings('.img-preview').hide();
-    $this.siblings('.img').val('');
-    $this.hide();
+    $this.parent().parent().find('.img-preview').fadeOut();
+    $this.parent().parent().siblings('.img').val('');
+    $this.fadeOut();
   });
 
 
