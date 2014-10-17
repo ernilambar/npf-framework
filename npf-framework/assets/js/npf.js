@@ -11,7 +11,9 @@ jQuery(document).ready(function($){
 	$('input.select-time').timepicker();
 	$('input.select-datetime').datetimepicker();
 
-  $("select").select2();
+  $("select").select2({
+  	width: 'resolve'
+  });
 
   $('input.npf-on-off').onoff();
 
