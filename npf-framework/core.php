@@ -30,6 +30,7 @@ class NPF_Options
 		// On/Off
 		wp_enqueue_style( 'npf-framework-onoff-style', plugin_dir_url( __FILE__ ) . '/assets/vendor/onoff/jquery.onoff.css' );
 		wp_enqueue_script( 'npf-framework-onoff-script', plugin_dir_url( __FILE__ ) . 'assets/vendor/onoff/jquery.onoff.min.js', array('jquery') );
+
 		// Upload requirement
 		wp_enqueue_style('thickbox');
 	  wp_enqueue_script('media-upload');
@@ -39,24 +40,20 @@ class NPF_Options
 		wp_enqueue_style( 'wp-color-picker' );
 		wp_enqueue_script( 'wp-color-picker');
 
-
-		wp_register_style( 'npf-framework-style', plugin_dir_url( __FILE__ ) . '/assets/css/npf.css' );
-		wp_enqueue_style( 'npf-framework-style' );
-
-		//Datepicker
-		wp_enqueue_style( 'jquery-ui-datepicker', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css' );
+		// jQuery UI Style
+		wp_enqueue_style( 'jquery-ui-style', 'http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.18/themes/smoothness/jquery-ui.css' );
 
 		// Select2
 		wp_enqueue_style( 'npf-framework-select2-style', plugin_dir_url( __FILE__ ) . '/assets/vendor/select2/select2.css' );
 		wp_enqueue_script( 'npf-framework-select2-script', plugin_dir_url( __FILE__ ) . 'assets/vendor/select2/select2.min.js', array('jquery') );
 
+		// Framework Style
+		wp_enqueue_style( 'npf-framework-style', plugin_dir_url( __FILE__ ) . '/assets/css/npf.css' );
 
 		wp_enqueue_script( 'npf-framework-tabs-script', plugin_dir_url( __FILE__ ) . '/assets/js/jquery.easytabs.min.js', array('jquery') );
-		wp_enqueue_script( 'npf-framework-upload', plugin_dir_url( __FILE__ ) . 'assets/js/upload.js', array('jquery') );
 
 		wp_enqueue_script( 'npf-framework-timepicker', plugin_dir_url( __FILE__ ) . 'assets/js/jquery-ui-timepicker-addon.js', array('jquery','jquery-ui-core','jquery-ui-slider','jquery-ui-datepicker') );
 		wp_enqueue_script( 'npf-framework-script', plugin_dir_url( __FILE__ ) . 'assets/js/npf.js', array('jquery','jquery-ui-core','jquery-ui-slider','jquery-ui-datepicker','npf-framework-tabs-script','npf-framework-timepicker','npf-framework-select2-script','npf-framework-onoff-script') );
-
 
 	}
 
