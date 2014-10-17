@@ -22,7 +22,7 @@ class npf_field_checkbox extends npf_field
 					$checked_text = ' checked="checked" ';
 				}
 				echo '<input type="checkbox" name="'.$args['field_name'].'[]" id="'.$args['field_id'].'-'.esc_attr($key).'" '.$checked_text.' value="'.esc_attr($key).'" class="stylish-checkbox" />';
-				echo '<label for="'.$args['field_id'].'-'.esc_attr($key).'">'.$choice.'</label>';
+				echo '<label for="'.$args['field_id'].'-'.esc_attr($key).'">'.$choice.'</label><br />';
 			}
 		}
 

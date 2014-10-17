@@ -28,10 +28,13 @@ class npf_field_custom_post_type_checkbox extends npf_field
 		$all_posts = get_posts($pargs);
 		if (!empty($all_posts)) {
 			foreach ($all_posts as $key => $choice) {
-				echo '<input type="checkbox" name="'.$args['field_name'].'[]" id="'.$args['field_id'].'"  value="'.esc_attr($choice->ID).'"';
+				echo '<input type="checkbox" name="'.$args['field_name'].'[]" id="'.$args['field_id'].'-'.esc_attr($key).'"  value="'.esc_attr($choice->ID).'"';
 				checked( is_array($args['field_value']) && in_array($choice->ID, $args['field_value']), true, true );
+				echo ' class="stylish-checkbox" ';
 				echo ' />';
-				echo esc_attr($choice->post_title).'<br/>';
+				// echo esc_attr($choice->post_title).'<br/>';
+				echo '<label for="'.$args['field_id'].'-'.esc_attr($key).'">'.esc_attr($choice->post_title).'</label><br />';
+
 			}
 		}
 
