@@ -61,3 +61,19 @@ input.stylish-checkbox:not(old):checked + label{
 input.stylish-radio:not(old):checked + label{
   background-position : 0 -48px;
 }
+
+/*Radio Image*/
+input.stylish-radio-image {
+    display: none;
+}
+input.stylish-radio-image + label {
+    margin-right: 10px;
+    display: inline-flex;
+    padding: 2!important;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+}
+input.stylish-radio-image:checked + label {
+    border: 2px solid #777777;
+}

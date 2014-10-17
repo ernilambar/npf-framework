@@ -93,6 +93,15 @@ $my_settings = array(
 						'f' => 'Female',
 						),
 					),
+				'sample_radio_image' => array(
+					'id'    => 'sample_radio_image',
+					'title' => 'Sample Radio Image',
+					'type'  => 'radio_image',
+					'choices'  => array(
+						'layout-1' => plugins_url('assets/images/layout-1.png', __FILE__),
+						'layout-2' => plugins_url('assets/images/layout-2.png', __FILE__),
+						),
+					),
 				'sample_checkbox' => array(
 					'id'    => 'sample_checkbox',
 					'title' => 'Sample Checkbox',
