@@ -53,9 +53,9 @@ class NPF_Options
 
 		wp_enqueue_script( 'npf-framework-tabs-script', plugin_dir_url( __FILE__ ) . '/assets/js/jquery.easytabs.min.js', array('jquery') );
 		wp_enqueue_script( 'npf-framework-upload', plugin_dir_url( __FILE__ ) . 'assets/js/upload.js', array('jquery') );
-		wp_enqueue_script( 'npf-framework-color', plugin_dir_url( __FILE__ ) . 'assets/js/color.js', array('jquery') );
+
 		wp_enqueue_script( 'npf-framework-timepicker', plugin_dir_url( __FILE__ ) . 'assets/js/jquery-ui-timepicker-addon.js', array('jquery','jquery-ui-core','jquery-ui-slider','jquery-ui-datepicker') );
-		wp_enqueue_script( 'npf-framework-script', plugin_dir_url( __FILE__ ) . '/assets/js/npf.js', array('jquery','jquery-ui-core','jquery-ui-slider','jquery-ui-datepicker','npf-framework-tabs-script','npf-framework-timepicker','npf-framework-select2-script','npf-framework-onoff-script') );
+		wp_enqueue_script( 'npf-framework-script', plugin_dir_url( __FILE__ ) . 'assets/js/npf.js', array('jquery','jquery-ui-core','jquery-ui-slider','jquery-ui-datepicker','npf-framework-tabs-script','npf-framework-timepicker','npf-framework-select2-script','npf-framework-onoff-script') );
 
 
 	}

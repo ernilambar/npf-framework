@@ -17,4 +17,10 @@ jQuery(document).ready(function($){
 
   $('input.npf-on-off').onoff();
 
+  // Color
+  $('input.select-color').each(function(){
+      $(this).wpColorPicker();
+  });
+
+
 });
