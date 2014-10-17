@@ -26,8 +26,8 @@ class npf_field_cpt_checkbox extends npf_field
 			if (is_array($args['field_value']) && in_array($key, $args['field_value'])) {
 				$checked_text = ' checked="checked" ';
 			}
-			echo '<input type="checkbox" name="'.$args['field_name'].'[]" id="'.$args['field_id'].'" '.$checked_text.' value="'.esc_attr($key).'" />';
-			echo $choice->labels->singular_name . ' ';
+			echo '<input type="checkbox" name="'.$args['field_name'].'[]" id="'.$args['field_id'].'-'.esc_attr($key).'" '.$checked_text.' value="'.esc_attr($key).'" class="stylish-checkbox"  />';
+			echo '<label for="'.$args['field_id'].'-'.esc_attr($key).'">'.$choice->labels->singular_name.'</label>';
 		}
 
 
