@@ -77,3 +77,8 @@ input.stylish-radio-image + label {
 input.stylish-radio-image:checked + label {
     border: 2px solid #777777;
 }
+
+/*upload*/
+.npf-wrap .btn-remove-upload{
+  margin-top: 5px;
+}

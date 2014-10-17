@@ -40,5 +40,14 @@ jQuery(document).ready(function($){
     image_field.val(imgurl);
     tb_remove();
   }
+  $(document).on('click', 'input.btn-remove-upload', function(evt){
+    evt.preventDefault();
+    var $this = $(this);
+    $this.siblings('.img-preview').hide();
+    $this.siblings('.img').val('');
+    $this.hide();
+  });
+
+
 
 });
