@@ -18,8 +18,8 @@ class npf_field_radio extends npf_field
 		$field_value = $this->get_value($args);
 		if (isset($args['field']['choices'])) {
 			foreach ($args['field']['choices'] as $key => $choice) {
-				echo '<input type="radio" name="'.$args['field_name'].'" id="'.$args['field_id'].'" '.checked( $field_value, $key, false).' value="'.esc_attr($key).'" />';
-				echo $choice.'  ';
+				echo '<input type="radio" name="'.$args['field_name'].'" id="'.$args['field_id'].'-'.esc_attr($key).'" '.checked( $field_value, $key, false).' value="'.esc_attr($key).'" class="stylish-radio" />';
+				echo '<label for="'.$args['field_id'].'-'.esc_attr($key).'">'.$choice.'</label>';
 			}
 		}
 

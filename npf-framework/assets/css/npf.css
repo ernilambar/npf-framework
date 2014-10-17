@@ -29,3 +29,35 @@
 	clear:both;
 	display: block;
 }
+
+/*radio design*/
+
+.form-table input.tog, .form-table input[type="radio"] {
+    margin-right: 0 !important;
+}
+
+input.stylish-checkbox:not(old),
+input.stylish-radio:not(old){
+  width   : 28px;
+  margin  : 0;
+  padding : 0;
+  opacity : 0;
+  border : 1px red solid;
+}
+
+input.stylish-checkbox:not(old) + label,
+input.stylish-radio:not(old) + label{
+  display      : inline-block;
+  margin-left  : -18px;
+  padding-left : 28px;
+  background   : url('../images/checks.png') no-repeat 0 0;
+  line-height  : 24px;
+}
+
+input.stylish-checkbox:not(old):checked + label{
+  background-position : 0 -24px;
+}
+
+input.stylish-radio:not(old):checked + label{
+  background-position : 0 -48px;
+}
