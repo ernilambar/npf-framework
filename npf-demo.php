@@ -80,6 +80,12 @@ $my_settings = array(
 					'type'        => 'url',
 					'description' => 'Please Enter URL Link',
 					),
+				'sample_number' => array(
+					'id'          => 'sample_number',
+					'title'       => 'Sample Number',
+					'type'        => 'number',
+					'description' => 'Please Enter Number',
+					),
 				'sample_date' => array(
 					'id'    => 'sample_date',
 					'title' => 'Sample Date Picker',
