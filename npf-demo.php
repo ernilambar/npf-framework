@@ -74,6 +74,12 @@ $my_settings = array(
 					'type'        => 'email',
 					'description' => 'Please Enter Email Address',
 					),
+				'sample_url' => array(
+					'id'          => 'sample_url',
+					'title'       => 'Sample URL',
+					'type'        => 'url',
+					'description' => 'Please Enter URL Link',
+					),
 				'sample_date' => array(
 					'id'    => 'sample_date',
 					'title' => 'Sample Date Picker',
