@@ -60,7 +60,7 @@ class NPF_Options
 
 	function register_settings(){
 
-		register_setting($this->base_args['option_slug'].'-group', $this->base_args['option_slug']);
+		register_setting($this->base_args['option_slug'].'-group', $this->base_args['option_slug'], array($this, 'sanitize_callback') );
 
 		foreach ($this->base_args['tabs'] as $tab_key => $tab) {
 
@@ -82,6 +82,53 @@ class NPF_Options
 
 		}
 
+
+	}
+
+	////
+	function sanitize_callback($input){
+
+		$tabs = $this->base_args['tabs'];
+
+		foreach ($tabs as $tab_key => $tab) {
+			foreach ($tab['fields'] as $field_key => $field) {
+
+				// Text
+				if ( 'text' == $field['type'] ) {
+					$input[$field['id']] = sanitize_text_field($input[$field['id']]);
+				}
+				// URL
+				if ( 'url' == $field['type'] ) {
+					$input[$field['id']] = esc_url($input[$field['id']]);
+				}
+				// Email
+				if ( 'email' == $field['type'] ) {
+					$input[$field['id']] = sanitize_email($input[$field['id']]);
+				}
+				// On/Off
+				if ( 'on_off' == $field['type'] ) {
+					if ( ! isset($input[$field['id']]) ) {
+						$input[$field['id']] = 'OFF';
+					}
+				}
+				// Switch
+				if ( 'switch' == $field['type'] ) {
+					if ( ! isset($input[$field['id']]) ) {
+						$off_value =='';
+						if (isset($field['choices_off'])) {
+							reset($field['choices_off']);
+							$off_value = key($field['choices_off']);
+						}
+						if (!empty($off_value)) {
+							$input[$field['id']] = $off_value;
+						}
+					}
+				}
+
+			}
+		}
+
+		return $input;
 
 	}
 
