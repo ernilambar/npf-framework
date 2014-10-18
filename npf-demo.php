@@ -42,12 +42,17 @@ $my_settings = array(
 					'default'     => '',
 					'description' => 'Please Enter Sample Text ',
 					),
-				'sample_password' => array(
-					'id'          => 'sample_password',
-					'title'       => 'Sample Password',
-					'type'        => 'password',
-					'default'     => '',
-					'description' => 'Please Enter Password',
+				'sample_text_small' => array(
+					'id'          => 'sample_text_small',
+					'title'       => 'Sample Text Small',
+					'type'        => 'text',
+					'text_type'   => 'small',
+					),
+				'sample_text_large' => array(
+					'id'          => 'sample_text_large',
+					'title'       => 'Sample Text Large',
+					'type'        => 'text',
+					'text_type'   => 'large',
 					),
 				'sample_textarea' => array(
 					'id'          => 'sample_textarea',
@@ -55,6 +60,13 @@ $my_settings = array(
 					'type'        => 'textarea',
 					'default'     => '',
 					'description' => 'Please Enter Content ',
+					),
+				'sample_password' => array(
+					'id'          => 'sample_password',
+					'title'       => 'Sample Password',
+					'type'        => 'password',
+					'default'     => '',
+					'description' => 'Please Enter Password',
 					),
 				'sample_date' => array(
 					'id'    => 'sample_date',

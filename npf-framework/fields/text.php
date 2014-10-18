@@ -16,8 +16,12 @@ class npf_field_text extends npf_field
 	function render_field($args)
 	{
 
+		$text_class = 'regular-text';
+		if (isset($args['field']['text_type']) && in_array($args['field']['text_type'], array('small','regular','large') )) {
+			$text_class = $args['field']['text_type'] . '-text';
+		}
 		$field_value = $this->get_value($args);
-		echo '<input type="text" name="'.$args['field_name'].'" id="'.$args['field_id'].'" value="'.$field_value.'" class="regular-text code" />';
+		echo '<input type="text" name="'.$args['field_name'].'" id="'.$args['field_id'].'" value="'.$field_value.'" class="' . $text_class . ' code" />';
 
 	}
 
