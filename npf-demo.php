@@ -42,6 +42,13 @@ $my_settings = array(
 					'default'     => '',
 					'description' => 'Please Enter Sample Text ',
 					),
+				'sample_password' => array(
+					'id'          => 'sample_password',
+					'title'       => 'Sample Password',
+					'type'        => 'password',
+					'default'     => '',
+					'description' => 'Please Enter Password',
+					),
 				'sample_textarea' => array(
 					'id'          => 'sample_textarea',
 					'title'       => 'Sample Textarea',
