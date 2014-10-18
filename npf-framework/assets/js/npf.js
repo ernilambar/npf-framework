@@ -22,7 +22,7 @@ jQuery(document).ready(function($){
 
 
   // On Off
-  $('input.npf-on-off').onoff();
+  $('input.npf-on-off').css('border','1px red solid').tzCheckbox();
 
   // Color picker
   $('input.select-color').each(function(){

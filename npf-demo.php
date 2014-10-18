@@ -121,6 +121,14 @@ $my_settings = array(
 					'title' => 'Sample On Off',
 					'type'  => 'on_off',
 					),
+				'sample_switch' => array(
+					'id'          => 'sample_switch',
+					'title'       => 'Sample Switch',
+					'type'        => 'switch',
+					'choices_on'  => array('enable'=>'Enable'),
+					'choices_off' => array('disable'=>'Disable'),
+
+					),
 				'sample_radio' => array(
 					'id'    => 'sample_radio',
 					'title' => 'Sample Radio',
