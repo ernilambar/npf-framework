@@ -15,7 +15,7 @@
 
     </h2>
 
-    <form action="options.php" method="post">
+    <form action="options.php" method="post" class="postbox">
     <?php
 
     settings_fields($this->base_args['option_slug'].'-group');
