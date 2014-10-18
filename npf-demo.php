@@ -68,6 +68,12 @@ $my_settings = array(
 					'default'     => '',
 					'description' => 'Please Enter Password',
 					),
+				'sample_email' => array(
+					'id'          => 'sample_email',
+					'title'       => 'Sample Email',
+					'type'        => 'email',
+					'description' => 'Please Enter Email Address',
+					),
 				'sample_date' => array(
 					'id'    => 'sample_date',
 					'title' => 'Sample Date Picker',
