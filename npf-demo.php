@@ -174,6 +174,18 @@ $my_settings = array(
 						'sports' => 'Sports',
 						),
 					),
+				'sample_select' => array(
+					'id'          => 'sample_select',
+					'title'       => 'Sample Select',
+					'type'        => 'select',
+					'allow_null'  => true,
+					'description' => 'Please Select Interest',
+					'choices'  => array(
+						'movies' => 'Movies',
+						'tv'     => 'TV',
+						'sports' => 'Sports',
+						),
+					),
 				'sample_sidebar_select' => array(
 					'id'          => 'sample_sidebar_select',
 					'title'       => 'Sample Sidebar Select',

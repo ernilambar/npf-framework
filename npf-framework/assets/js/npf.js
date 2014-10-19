@@ -17,7 +17,7 @@ jQuery(document).ready(function($){
 
 	// Select2
   $("select").select2({
-  	width: 'resolve'
+    containerCss : {"min-width":"200px"}
   });
 
 
