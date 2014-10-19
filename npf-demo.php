@@ -180,6 +180,12 @@ $my_settings = array(
 					'type'        => 'sidebar_select',
 					'description' => 'Please Select Sidebar',
 					),
+				'sample_nav_menu_select' => array(
+					'id'          => 'sample_nav_menu_select',
+					'title'       => 'Sample Nav Menu Select',
+					'type'        => 'nav_menu_select',
+					'description' => 'Please Select Nav Menu',
+					),
 				'sample_user_role_select' => array(
 					'id'          => 'sample_user_role_select',
 					'title'       => 'Sample Role Select',
