@@ -23,7 +23,7 @@
     foreach ($this->base_args['tabs'] as $tab_key => $tab) {
 
       echo '<div id="npf-'.$tab['id'].'" class="single-tab-content">';
-      do_settings_sections($tab['id'].'-main');
+      do_settings_sections($tab['id'].'-'.$this->base_args['menu_slug']);
       echo '</div>';
 
     }

@@ -64,7 +64,12 @@ class NPF_Options
 
 		foreach ($this->base_args['tabs'] as $tab_key => $tab) {
 
-			add_settings_section( $tab['id'].'_settings', $tab['title'] , array($this,'section_text_callback'), $tab['id'].'-main');
+			add_settings_section(
+				$tab['id'].'_settings'.'-'.$this->base_args['menu_slug'],
+				$tab['title'] ,
+				array($this,'section_text_callback'),
+				$tab['id'].'-'.$this->base_args['menu_slug']
+			);
 
 			foreach ($tab['fields'] as $field_key => $field) {
 				$args = array(
@@ -77,7 +82,14 @@ class NPF_Options
 					'options'   => $this->options,
 				);
 
-				add_settings_field($field_key, $field['title'], array($this,'field_callback'), $tab['id'].'-main', $tab['id'].'_settings',  $args );
+				add_settings_field(
+					$field_key,
+					$field['title'],
+					array($this,'field_callback'),
+					$tab['id'].'-'.$this->base_args['menu_slug'],
+					$tab['id'].'_settings'.'-'.$this->base_args['menu_slug'],
+					$args
+				);
 			}
 
 		}
