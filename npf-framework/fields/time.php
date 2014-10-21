@@ -1,25 +1,27 @@
 <?php
 
-class npf_field_time extends npf_field
-{
-	var $args;
-	function __construct()
+if ( ! class_exists('npf_field_time')):
+	class npf_field_time extends npf_field
 	{
-		// vars
-		$this->name = 'time';
+		var $args;
+		function __construct()
+		{
+			// vars
+			$this->name = 'time';
 
-		// do not delete!
-  	parent::__construct();
+			// do not delete!
+	  	parent::__construct();
+		}
+
+
+		function render_field($args)
+		{
+
+			// nspre($args);
+			$field_value = $this->get_value($args);
+			echo '<input type="text" name="'.$args['field_name'].'" id="'.$args['field_id'].'" value="'.$field_value.'" class="regular-text code select-time" />';
+
+		}
+
 	}
-
-
-	function render_field($args)
-	{
-
-		// nspre($args);
-		$field_value = $this->get_value($args);
-		echo '<input type="text" name="'.$args['field_name'].'" id="'.$args['field_id'].'" value="'.$field_value.'" class="regular-text code select-time" />';
-
-	}
-
-}
+endif;
