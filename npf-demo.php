@@ -275,3 +275,60 @@ $my_settings = array(
 	);
 
 $npf_demo_object = new NPF_Options($my_settings);
+
+$my_settings_another = array(
+	'page_title'  => 'Another NPF Demo',
+	'menu_title'  => 'Another NPF Demo',
+	'capability'  => 'administrator',
+	'menu_slug'   => 'another-npf-demo-page',
+	'option_slug' => 'another_npf_demo_option',
+
+	// tab start
+	'tabs' => array(
+
+		'general' => array(
+			'id'    => 'general',
+			'title' => 'General',
+			'sub_heading' => 'General sub heading here',
+			'fields' => array(
+				'sample_text' => array(
+					'id'          => 'sample_text',
+					'title'       => 'Another Sample Text',
+					'type'        => 'text',
+					'default'     => '',
+					),
+
+				'sample_wysiwyg' => array(
+					'id'          => 'sample_wysiwyg',
+					'title'       => 'Another Sample Wysiwyg',
+					'type'        => 'wysiwyg',
+					),
+				),
+
+			),
+		'header' => array(
+			'id'    => 'header',
+			'title' => 'Header',
+			'sub_heading' => 'Header sub heading here',
+			'fields' => array(
+				'header_title' => array(
+					'id'          => 'header_title',
+					'title'       => 'Header Title',
+					'type'        => 'text',
+					'description' => 'Please Enter Header Title',
+					),
+				'header_intro' => array(
+					'id'          => 'header_intro',
+					'title'       => 'Header Intro',
+					'type'        => 'textarea',
+					'description' => 'Please Enter Header Intro',
+					),
+				),
+			),
+
+		),
+	// tab end
+
+	);
+
+$npf_demo_object_another = new NPF_Options($my_settings_another);
