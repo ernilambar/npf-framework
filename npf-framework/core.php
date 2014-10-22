@@ -6,10 +6,27 @@ if ( ! class_exists('NPF_Options')):
 	{
 		var $base_args;
 		var $options;
+		var $top_level_menu;
+		var $parent_page;
 		function __construct($args) {
 
 			$this->base_args = $args;
 			$this->options = get_option($this->base_args['option_slug']);
+
+			// Check if top level page
+			if ( isset($this->base_args['top_level_menu']) && $this->base_args['top_level_menu'] ) {
+				$this->top_level_menu = true;
+			}
+			else{
+				$this->top_level_menu = false;
+			}
+			// Set submenu page
+			if ( isset($this->base_args['parent_page']) && ! empty($this->base_args['parent_page'] ) ) {
+				$this->parent_page = $this->base_args['parent_page'];
+			}
+			else{
+				$this->parent_page = 'options-general.php';
+			}
 
 			add_action('admin_menu', array($this,'create_menu_page'));
 
@@ -179,13 +196,25 @@ if ( ! class_exists('NPF_Options')):
 		///
 		function create_menu_page(){
 
-	    add_options_page(
-	        $this->base_args['page_title'],
-	        $this->base_args['menu_title'],
-	        $this->base_args['capability'],
-	        $this->base_args['menu_slug'],
-	        array($this,'menu_page_callback')
-	    );
+			if ( true == $this->top_level_menu ) {
+		    add_menu_page(
+		        $this->base_args['page_title'],
+		        $this->base_args['menu_title'],
+		        $this->base_args['capability'],
+		        $this->base_args['menu_slug'],
+		        array($this,'menu_page_callback')
+		    );
+			}
+			else{
+		    add_submenu_page(
+		    		$this->parent_page,
+		        $this->base_args['page_title'],
+		        $this->base_args['menu_title'],
+		        $this->base_args['capability'],
+		        $this->base_args['menu_slug'],
+		        array($this,'menu_page_callback')
+		    );
+			}
 
 		}
 
