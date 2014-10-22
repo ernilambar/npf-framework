@@ -42,7 +42,8 @@ if ( ! class_exists('NPF_Options')):
 		function plugin_scripts(){
 
 			$screen = get_current_screen();
-			$required_screen = 'settings_page_'. $this->base_args['menu_slug'];
+
+			$required_screen = $this->get_required_screen();
 			if ($required_screen != $screen->id ) {
 				return;
 			}
@@ -223,6 +224,43 @@ if ( ! class_exists('NPF_Options')):
 			require_once 'views/admin.php';
 
 		}
+
+		// Returns required screen
+		function get_required_screen(){
+			$output = '';
+			$map_array = array(
+				'index.php'         => 'dashboard',
+				'edit.php'          => 'posts',
+				'upload.php'        => 'media',
+				'edit.php?post_type=page'  => 'pages',
+				'edit-comments.php'   => 'comments',
+				'themes.php'          => 'appearance',
+				'plugins.php'         => 'plugins',
+				'users.php'           => 'users',
+				'tools.php'           => 'tools',
+				'options-general.php' => 'settings',
+				);
+			if ( true == $this->top_level_menu ) {
+				$output = 'toplevel';
+			}
+			else{
+				if (isset($map_array[$this->parent_page])) {
+					$output = $map_array[$this->parent_page];
+				}
+				else{
+					$t= strpos($this->parent_page, 'edit.php?post_type=');
+					if ( false !== $t ) {
+						$output = substr($this->parent_page, strlen('edit.php?post_type=') );
+					}
+
+				}
+			}
+			$output .= '_page_';
+			$output .= $this->base_args['menu_slug'];
+
+			return $output;
+		}
+
 	}
 
 endif; // end if not class_exists
