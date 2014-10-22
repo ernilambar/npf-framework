@@ -20,6 +20,10 @@ if ( ! class_exists('npf_field_nav_menu_select')):
 
 			if ( ! empty($all_menus) ) {
 				echo '<select name="'.$args['field_name'].'" id="'.$args['field_id'].'">';
+				if ( isset($args['field']['allow_null']) && true == $args['field']['allow_null'] ) {
+					echo '<option value="">Select</option>';
+				}
+
 				foreach ($all_menus as $k => $m) {
 					echo '<option value="'.esc_attr($k).'" ';
 					selected($k, $args['field_value'], true );

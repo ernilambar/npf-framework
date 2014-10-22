@@ -29,6 +29,10 @@ if ( ! class_exists('npf_field_custom_taxonomy_select')):
 			if (isset($args['field']['extra_args']) && !empty($args['field']['extra_args']) && is_array($args['field']['extra_args']) ) {
 				$pargs = array_merge($pargs,$args['field']['extra_args']);
 			}
+			if ( isset($args['field']['allow_null'])&& true == $args['field']['allow_null'] ) {
+				$pargs['show_option_none'] = __('Select');
+			}
+
 			wp_dropdown_categories( $pargs );
 
 		}

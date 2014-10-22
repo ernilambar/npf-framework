@@ -28,6 +28,11 @@ if ( ! class_exists('npf_field_custom_post_type_select')):
 			$all_posts = get_posts($pargs);
 			if (!empty($all_posts)) {
 				echo '<select name="'.$args['field_name'].'" id="'.$args['field_id'].'">';
+
+				if ( isset($args['field']['allow_null']) && true == $args['field']['allow_null'] ) {
+					echo '<option value="">Select</option>';
+				}
+
 				foreach ($all_posts as $k => $p) {
 					echo '<option value="'.esc_attr($p->ID).'" ';
 					selected($p->ID, $args['field_value'], true );

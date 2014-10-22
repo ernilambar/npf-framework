@@ -190,12 +190,14 @@ $my_settings = array(
 					'id'          => 'sample_sidebar_select',
 					'title'       => 'Sample Sidebar Select',
 					'type'        => 'sidebar_select',
+					'allow_null'  => true,
 					'description' => 'Please Select Sidebar',
 					),
 				'sample_nav_menu_select' => array(
 					'id'          => 'sample_nav_menu_select',
 					'title'       => 'Sample Nav Menu Select',
 					'type'        => 'nav_menu_select',
+					'allow_null'  => true,
 					'description' => 'Please Select Nav Menu',
 					),
 				'sample_user_role_select' => array(
