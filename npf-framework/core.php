@@ -68,6 +68,10 @@ if ( ! class_exists('NPF_Options')):
 			wp_enqueue_style( 'npf-framework-select2-style', plugin_dir_url( __FILE__ ) . '/assets/vendor/select2/select2.css' );
 			wp_enqueue_script( 'npf-framework-select2-script', plugin_dir_url( __FILE__ ) . 'assets/vendor/select2/select2.min.js', array('jquery') );
 
+			// Simple Slider
+			wp_enqueue_style( 'npf-framework-simple-slider-style', plugin_dir_url( __FILE__ ) . '/assets/vendor/simple-slider/simple-slider.css' );
+			wp_enqueue_script( 'npf-framework-simple-slider-script', plugin_dir_url( __FILE__ ) . 'assets/vendor/simple-slider/simple-slider.min.js', array('jquery') );
+
 			// Framework Style
 			wp_enqueue_style( 'npf-framework-style', plugin_dir_url( __FILE__ ) . '/assets/css/npf.css' );
 

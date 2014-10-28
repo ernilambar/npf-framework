@@ -88,3 +88,8 @@ input.stylish-radio-image:checked + label {
 .npf-wrap .btn-remove-upload{
   margin-top: 5px;
 }
+
+/*simple slider*/
+.npf-slider-output {
+    margin-top: 5px;
+}

@@ -26,6 +26,7 @@ $my_settings = array(
 	'capability'  => 'administrator',
 	'menu_slug'   => 'npf-demo-page',
 	'option_slug' => 'npf_demo_option',
+	'parent_page' => 'tools.php',
 
 	// tab start
 	'tabs' => array(
@@ -87,6 +88,13 @@ $my_settings = array(
 					'title'       => 'Sample Number',
 					'type'        => 'number',
 					'description' => 'Please Enter Number',
+					),
+				'sample_numeric_slider' => array(
+					'id'           => 'sample_numeric_slider',
+					'title'        => 'Sample Numeric Slider',
+					'type'         => 'numeric_slider',
+					'default'      => '8',
+					'min_max_step' => array( 0, 20, 2 ),
 					),
 				'sample_date' => array(
 					'id'          => 'sample_date',

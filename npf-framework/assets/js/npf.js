@@ -59,6 +59,31 @@ jQuery(document).ready(function($){
     $this.fadeOut();
   });
 
+  // Numeric Slider
+  // $(".npf-numeric-slider").simpleSlider();
+  $(".npf-numeric-slider").bind("slider:changed", function (event, data) {
+    // The currently selected value of the slider
+    $(this).parent().find('.npf-slider-output').val(data.value);
+
+  });
+
+
+  // $(".npf-numeric-slider111")
+  //   .each(function () {
+  //     var input = $(this);
+  //     $("<p>")
+  //       .addClass("output1")
+  //       .insertAfter($(this));
+  //   })
+  //   .bind("slider:ready slider:changed", function (event, data) {
+  //     $(this)
+  //       .nextAll(".output1:first")
+  //       .css("border","1px red solid")
+  //         .html(data.value.toFixed(3));
+  //   });
+
+
+
 
 
 });
