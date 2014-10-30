@@ -53,9 +53,8 @@ if ( ! class_exists('NPF_Options')):
 			wp_enqueue_script( 'npf-framework-tzcheckbox-script', plugin_dir_url( __FILE__ ) . 'assets/vendor/tzcheckbox/jquery.tzCheckbox.js', array('jquery') );
 
 			// Upload requirement
-			wp_enqueue_style('thickbox');
-		  wp_enqueue_script('media-upload');
-			wp_enqueue_script('thickbox');
+			wp_enqueue_media();
+			wp_enqueue_script( 'custom-header' );
 
 			// Color
 			wp_enqueue_style( 'wp-color-picker' );

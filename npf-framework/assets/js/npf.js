@@ -1,5 +1,4 @@
-var image_field;
-
+var file_frame;
 jQuery(document).ready(function($){
 
 	// Tabs
@@ -29,27 +28,51 @@ jQuery(document).ready(function($){
       $(this).wpColorPicker();
   });
 
-  // Upload
-  $(document).on('click', 'input.select-img', function(evt){
-    image_field = $(this).siblings('.img');
-    tb_show('', 'media-upload.php?type=image&amp;TB_iframe=true');
-    return false;
-  });
-  $('input.img').each(function(i,item){
-    var $this = $(this);
-    if( $this.val() == '' ){
-      $this.parent().find('.image-preview-wrap').hide();
-    }
+  // Numeric Slider
+  $(".npf-numeric-slider").bind("slider:changed", function (event, data) {
+    // The currently selected value of the slider
+    $(this).parent().find('.npf-slider-output').val(data.value);
+
   });
 
-  window.send_to_editor = function(html) {
-    imgurl = $('img', html).attr('src');
-    image_field.val(imgurl);
-    image_field.parent().find('.image-preview-wrap').hide();
-    image_field.parent().find('.img-preview').attr('src',imgurl);
-    image_field.parent().find('.image-preview-wrap').fadeIn();
-    tb_remove();
-  }
+  // Uploads
+  jQuery(document).on('click', 'input.select-img', function( event ){
+
+    var $this = $(this);
+
+    event.preventDefault();
+
+    // If the media frame already exists, reopen it.
+    if ( file_frame ) {
+      file_frame.open();
+      return;
+    }
+
+    // Create the media frame.
+    file_frame = wp.media.frames.file_frame = wp.media({
+      title: jQuery( this ).data( 'uploader_title' ),
+      button: {
+        text: jQuery( this ).data( 'uploader_button_text' ),
+      },
+      multiple: false  // Set to true to allow multiple files to be selected
+    });
+
+    // When an image is selected, run a callback.
+    file_frame.on( 'select', function() {
+      // We set multiple to false so only get one image from the uploader
+      attachment = file_frame.state().get('selection').first().toJSON();
+      image_field = $this.siblings('.img');
+      var imgurl = attachment.url;
+      image_field.val(imgurl);
+      image_field.parent().find('.image-preview-wrap').hide();
+      image_field.parent().find('.img-preview').attr('src',imgurl);
+      image_field.parent().find('.image-preview-wrap').fadeIn();
+
+    });
+
+    // Finally, open the modal
+    file_frame.open();
+  });
   $(document).on('click', 'input.btn-remove-upload', function(evt){
     evt.preventDefault();
     var $this = $(this);
@@ -58,32 +81,5 @@ jQuery(document).ready(function($){
     $this.parent().parent().siblings('.img').val('');
     $this.fadeOut();
   });
-
-  // Numeric Slider
-  // $(".npf-numeric-slider").simpleSlider();
-  $(".npf-numeric-slider").bind("slider:changed", function (event, data) {
-    // The currently selected value of the slider
-    $(this).parent().find('.npf-slider-output').val(data.value);
-
-  });
-
-
-  // $(".npf-numeric-slider111")
-  //   .each(function () {
-  //     var input = $(this);
-  //     $("<p>")
-  //       .addClass("output1")
-  //       .insertAfter($(this));
-  //   })
-  //   .bind("slider:ready slider:changed", function (event, data) {
-  //     $(this)
-  //       .nextAll(".output1:first")
-  //       .css("border","1px red solid")
-  //         .html(data.value.toFixed(3));
-  //   });
-
-
-
-
 
 });
