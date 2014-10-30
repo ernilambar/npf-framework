@@ -26,7 +26,6 @@ $my_settings = array(
 	'capability'  => 'administrator',
 	'menu_slug'   => 'npf-demo-page',
 	'option_slug' => 'npf_demo_option',
-	'parent_page' => 'tools.php',
 
 	// tab start
 	'tabs' => array(
