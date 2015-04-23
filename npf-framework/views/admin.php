@@ -2,6 +2,9 @@
 
   <h2><?php echo esc_html( get_admin_page_title() ); ?></h2>
 
+    <?php if ( 'options-general.php' != $this->parent_page ): ?>
+      <?php settings_errors(); ?>
+    <?php endif ?>
 
   <div id="npf-tab-container" class="tab-container">
 
